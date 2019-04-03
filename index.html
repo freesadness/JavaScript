@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="The Weakest Link, Side-client Web Development, 2019">
+    <meta name="description" content="The Weakest Link, Assignment 3&4 Side-client Web Development Winter 2019">
+    <title>The Weakest Link</title>
+    <link rel="stylesheet" href="css/style.css" class="style">
+    <link rel="icon" href="img/dying-monster-moving1.gif" type="image/gif">
+</head>
+<body>
+<main>
+    <div class="container">
+        <img src="img/game_start.png" alt="start">
+        <div id="info">
+            <form action="#">
+                <div class="form-item">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Jon Snow">
+                    <small></small>
+                </div>
+                <div class="form-item">
+                    <label for="age">Age </label>
+                    <input type="text" name="age" id="age" placeholder="25">
+                    <small></small>
+                </div>
+                <div class="form-item">
+                    <label></label>
+                    <input type="radio" name="sex" value="male" id="male" ><label for="male">Male</label>
+                    <input type="radio" name="sex" value="female" id="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="sex" value="other" id="other" checked>
+                    <label for="other">Other</label>
+                </div>
+                <a id="get_started" href="#" >GET STARTED</a>
+            </form>
+        </div>
+        <div id="rules">
+            <h3>Round 1
+            </h3><p>
+                The player is required to answer a series of questions within two minutes, with the aim of banking at most $500,000 from the “MONEY TREE”.
+            </p><p>
+                If the player answers a question correctly, the money will move upwards the “Money Tree”, by one level. If the player answers the question wrong, the money is lost and the “Money Tree” starts from $0 again.
+            </p><p>
+                Before a question is asked, the player is allowed to bank the money that corresponds to the level they are at on the “Money Tree”. However, the player should not be allowed to bank money if they are on level $0 on the money tree.
+            </p><p>
+                If the player banks the money it stays safe, however the “Money Tree”, will start again, from $0.
+            </p><p>
+                Note, for this round you can ONLY bank at most $500,000.
+            </p><p>
+                Once the timer runs out, the player will automatically go onto round 2 along with all money banked. Also, if the user banks $500,000 before the timer runs out they will automatically go onto round 2.
+            </p><h3>
+                Round 2
+            </h3><p>
+                All money that was banked in Round 1 must be brought forward to this round.
+            </p><p>
+                Like Round 1, the player is required to answer a series of questions however, within 90 seconds, with the aim of banking at most $1,000,000 from the “MONEY TREE”.
+            </p><p>
+                Like Round 1, if the player answers a question correctly, the money will move upwards the “Money Tree”, by one level. If the player answers the question wrong, the money is lost and the “Money Tree” starts from $0 again.
+            </p><p>
+                Before a question is asked, the player is allowed to bank the money that corresponds to the level they are at on the “Money Tree”. However, the player should not be allowed to bank money if they are on level $0 on the money tree.
+            </p><p>
+                If the player banks the money it stays safe, however the “Money Tree”, will start again, from $0.
+            </p><p>
+                Note, for this round you can ONLY bank at most $1,000,000.
+            </p><p>
+                Once the timer runs out, the player will automatically go onto round 3, the Sudden death round. However, the player will only go onto Round 3 if some money was banked. If no money was ever banked, then at this point the player will lose and be deemed the “Weakest Link”
+            </p><h3>
+                Round 3
+            </h3><p>
+                Once the player qualifies for Round 3 then they will be required to answer a series of questions within 1 minute, in this Sudden death round. Once the player correctly answer all questions asked within the specified time then they will win the game and walk away with all the money that was banked. However, any question answered incorrectly will automatically cause the player to lose the game and be deemed, “The Weakest Link”
+            </p>
+        </div>
+        <form  id="buttons" action="#">
+
+                <input id="start_button" type="button" value="START GAME">
+                <input id="rules_button" type="button" value="VIEW RULES">
+        </form>
+    </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

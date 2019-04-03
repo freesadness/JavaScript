@@ -1,0 +1,239 @@
+:root{
+    --aside-font-size: 5vh;
+    --message-font-size: 4vh;
+    --question-font-size: 4vh;
+    --option-font-size: 4vh;
+    --message-padding-bottom: 30%;
+}
+
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    transition: all 1s;
+    cursor: default;
+}
+body{
+    font-family: sans-serif, Helvetica, Arial;
+    background-color: #607D8B;
+    display: flex;
+    justify-content: space-around;
+    color: #333;
+    margin: 0 1%;
+}
+
+aside{
+    flex: 2;
+    display:flex;
+    flex-direction: column;
+}
+aside > *{
+    animation: 1s stack ease;
+}
+.left{
+    align-self: center;
+}
+.right{
+    display: flex;
+    justify-content: space-between;
+}
+.money_tree {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+aside > div, .dollar{
+    text-align: center;
+    margin: 0.2vh 0;
+    font-family: Luminari, fantasy, monospace;
+    color: white;
+    font-size: var(--aside-font-size);;
+
+    height: 8%;
+    width:100%;
+}
+.bank, .timer, .dollar{
+    border-radius: 50%;
+    background-color: #336699;
+}
+.highlighted{
+    background-color: lightcoral;
+}
+main{
+    flex: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.host{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 80vh;
+    flex-basis: 10%;
+}
+.host img{
+    width: 100%;
+    filter: drop-shadow(-1vh 1vh 0vh #222);
+}
+.time_container{
+    align-self: flex-end;
+}
+
+#logo  img{
+    width: 100%;
+}
+
+.container{
+    position: relative;
+    flex: 8;
+    align-self: center;
+    align-items: center;
+}
+#message, #shadow{
+    color: #666;
+    position: relative;
+    width: 110%;
+    height: 100%;
+    padding: 5% 5% var(--message-padding-bottom) 5%;
+    font-size: var(--message-font-size);
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 5% 80%, 2% 100%, 10% 80%, 0% 80%);
+}
+#shadow{
+    position: absolute;
+    background-color: #333;
+    z-index: -1;
+    transform: translate(-1vh, -98%);
+}
+
+.question{
+    font-size: var(--question-font-size);
+}
+.option{
+    width: 80%;
+    font-size: var(--option-font-size);;
+    margin-top: 1vh;
+    box-shadow: .5vh .5vh .5vh #eee;
+    border: .1vh solid #eee;
+    padding: 1vh;
+    text-align: center;
+}
+.option:hover{
+    animation: hover_option .5s infinite alternate;
+}
+.choice_container{
+    display: flex;
+    width: 100%;
+    margin-top: 3vh;
+    justify-content: flex-end;
+    outline: none;
+}
+.choice_container > button{
+    font-size: 2vh;
+    color: #ddd;
+    background-color: lightskyblue;
+    padding: 2vh 4vh;
+    margin-right: 1vh;
+    outline: none;
+    box-shadow: 1vh 1vh 1vh #ccc;
+}
+.choice_container > button:hover{
+    box-shadow: 0 1vh 1vh lightgreen;
+    box-sizing: border-box;
+    position: relative;
+    top: .5vh;
+}
+a:hover, .choice_container > button:active{
+    position: relative;
+    top: 1vh;
+}
+
+.animation_welcome {
+    animation: 1s welcome ease;
+}
+
+@keyframes welcome {
+    0%{ margin-top: -1000vh}
+    25%{margin-top: 20vh}
+    50%{ margin-top: -5vh}
+    75%{margin-top: 1vh}
+    100%{margin-top: 0}
+}
+
+.animation_drop {
+    animation: 0.3s drop ease;
+}
+
+@keyframes drop {
+    0%{ transform: translateX(-12vh)}
+    100%{ transform: translateX(0)}
+}
+.animation_appear {
+    animation: 3s appear ease;
+}
+
+@keyframes appear {
+    0%{ opacity: 0}
+    100%{opacity: 1}
+}
+
+.animation_stack {
+    animation: 0.5s stack ease;
+}
+@keyframes stack {
+    0%{ margin-top: -1000vh}
+    100%{margin-top: 0}
+}
+
+.loading_box{
+    margin-top: 1vh;
+    left: 50%;
+    width: 90%;
+    height: 10%;
+    border: .1vh solid #333;
+    padding: 1vh;
+    font-size: 2vh;
+    color: #eee;
+    background: linear-gradient(to right,lightgreen 0,forestgreen 25%, lightgreen 50%,  #ddd 50%) left;
+    background-size: 200%;
+    animation: progressing 3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+@keyframes progressing {
+    from{background-position: right; color: #333}
+    to{background-position: left; color: #eee}
+}
+
+@keyframes hover_option {
+    from{border: .1vh solid #eee; box-shadow: .5vh .5vh .5vh #ddd; }
+    to{border: .1vh solid lightgreen; box-shadow: .5vh .5vh .5vh lightgreen; }
+
+}
+
+.animation_error{
+    animation-name: error_animation;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+}
+@keyframes error_animation {
+    0%{transform: rotate(0deg)}
+    25%{transform: rotate(5deg)}
+    50%{transform: rotate(0deg)}
+    75%{transform: rotate(-5deg)}
+    100%{transform: rotate(5deg)}
+}
+
+@media screen and (max-aspect-ratio: 10/9){
+    :root{
+        --aside-font-size: 3vh;
+        --message-font-size: 4vh;
+        --question-font-size: 3vh;
+        --option-font-size: 3vh;
+        --message-padding-bottom: 60%;
+    }
+}

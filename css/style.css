@@ -1,0 +1,204 @@
+:root{
+    --main-bg-color: rgba(0,18,31,0.85);
+    --main-color: #ccc;
+    --button-font-size: 3vh;
+    --form-font-size:  4vh;
+    --small-font-size: 2vh;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: all .5s;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.container > * {
+    position: absolute;
+}
+
+#buttons {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    bottom: 10%;
+}
+
+#buttons input {
+    font-size: var(--button-font-size);
+    color: var(--main-color);
+    height:100%;
+    width: 20vw;
+    margin: 0 3%;
+    background-color: #111;
+    border: .1vh solid lightskyblue;
+    outline: none;
+}
+
+#buttons input:hover, #get_started:hover{
+    background-color: var(--main-bg-color);
+    outline: .1vh solid #ccc;
+}
+img {
+     height:100%;
+     width: 100%;
+    filter: brightness(60%);
+ }
+
+#info {
+    top: 20% ;
+    left: 20%;
+    width: 60%;
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    opacity: 0;
+}
+.form-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-top: 2vh;
+}
+.form-item:first-child{
+    padding-top: 5vh;
+}
+.form-item *{
+    font-size: var(--form-font-size);
+    margin: 1vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+label:first-child{
+    text-align: right;
+    width: 20%;
+    margin-left: 0;
+}
+input[type=radio]{
+    display: none;
+}
+input[type=radio] +label{
+    color: #888;
+    padding: 2vh;
+    outline: .1vh solid #333;
+}
+
+input[type=radio]:hover+label,
+input[type=radio]:checked+label{
+    color: var(--main-color);
+    outline: .1vh solid lightskyblue;
+}
+input[type=text]{
+    color: inherit;
+    background-color:inherit;
+    font-size: var(--form-font-size);
+    height: 6vh;
+    width: 40%;
+    border-bottom: 0.1vh solid #ccc;
+}
+
+input[type=text]:focus{
+    outline: .1vh solid lightskyblue;
+    outline-offset: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+    -webkit-text-fill-color: var(--main-color);
+    -webkit-box-shadow: 0 0 0 1000px var(--main-bg-color)inset !important;
+    background-color: var(--main-bg-color) !important;
+}
+.invalid{
+    border: .1vh solid #c60307 !important;
+}
+
+
+#get_started{
+    text-decoration: none;
+    color: var(--main-color);
+    background-color: #111;
+    border: .1vh solid lightskyblue;
+    outline: none;
+    float: right;
+    font-size: var(--form-font-size);
+    padding: 1vh;
+    margin: 5vh;
+}
+
+#buttons input:active,input[type=radio]:active +label, #get_started:active{
+    position: relative;
+    top: .5vh;
+}
+#rules {
+    width: 80%;
+    height: 70%;
+    left: 50%;
+    top: 40%;
+    padding: 2vh 4vh;
+    line-height: var(--form-font-size);
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    color: var(--main-color);
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    opacity: 0;
+    overflow: auto;
+    font-family: monospace,Consolas;
+    font-size: var(--form-font-size);
+}
+
+#rules::-webkit-scrollbar{
+    width:0.5vh;
+}
+
+#rules::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    outline: .1vh solid lightskyblue;
+}
+#rules p{
+    margin: 2vh;
+}
+small{
+    display: inline-block;
+    font-size: var(--small-font-size) !important;
+    width: 30%;
+}
+
+.animation_error{
+    animation-name: error_animation;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes error_animation {
+    0%{transform: rotate(0deg)}
+    25%{transform: rotate(5deg)}
+    50%{transform: rotate(0deg)}
+    75%{transform: rotate(-5deg)}
+    100%{transform: rotate(5deg)}
+}
+
+
+@media screen and (max-aspect-ratio: 9/7){
+    :root{
+        --button-font-size: 1.5vh;
+        --form-font-size:  1.5vh;
+        --small-font-size: 1vh;
+
+    }
+
+}
